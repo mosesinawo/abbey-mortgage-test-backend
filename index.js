@@ -12,7 +12,7 @@ const path = require("path")
 
 app.use(cors({
   origin:["http://localhost:3000",
-"http://mblog-test.onrender.com"]
+"https://mblogapp-mern.netlify.app"]
 }))  
 
 dotenv.config();
@@ -47,7 +47,7 @@ async function main() {
   app.use("/api/posts",posts )
   app.use("/api/categories",categories )
  
-
-app.listen("5000", () =>{
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () =>{
     console.log(("Backend is running"))
 })  
