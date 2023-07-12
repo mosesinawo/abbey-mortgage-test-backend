@@ -49,5 +49,5 @@ async function main() {
  
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () =>{
-    console.log(("Backend is running"))
+    console.log((`backend running on port ${PORT}`))
 })  
