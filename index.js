@@ -11,9 +11,9 @@ const cors = require('cors')
 const path = require("path")
 
 app.use(cors({
-  origin:["http://localhost:3000",
-"https://mblogapp-mern.netlify.app"]
-}))  
+  origin: '*', // Set origin to '*' to allow requests from any origin
+  credentials: true, // Allow cookies and credentials
+}));  
 
 dotenv.config();
 app.use(express.json())
@@ -21,7 +21,6 @@ app.use("/images", express.static(path.join(__dirname,"/images")))
 
 async function main() {
     await mongoose.connect(process.env.MONGO_URL);
-  
     // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
   }
   main()
